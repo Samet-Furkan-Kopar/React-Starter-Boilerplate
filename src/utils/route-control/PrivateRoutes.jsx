@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 import { Navigate, useLocation, useOutlet } from "react-router-dom";
-import { useAccount } from "../store/user/hooks";
+import { useAccount } from "../../store/user/hooks";
+
 export default function PrivateRoutes() {
     const user = useAccount();
-    
     const location = useLocation(); 
     const outlet = useOutlet();
  
-    if (user === null || user?.id === null || user?.fullname === null || !user) {
-        return ( 
+    if (!user?.id ) {
+        return (   
             <Navigate
                 to="/auth/login"
                 replace={true}
@@ -19,3 +20,5 @@ export default function PrivateRoutes() {
     }
     return [outlet];
 }
+
+

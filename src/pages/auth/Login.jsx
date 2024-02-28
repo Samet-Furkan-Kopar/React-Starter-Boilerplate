@@ -26,7 +26,7 @@ import * as yup from "yup";
 import { useState } from "react";
 import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-
+import {setCurrentAccount} from "../../store/user/actions";
 const schema = yup.object({
   email: yup
     .string()
@@ -167,7 +167,7 @@ const Login = () => {
             label="Remember me"
           />
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
@@ -187,6 +187,18 @@ const Login = () => {
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
+              <Button
+                onClick={() => setCurrentAccount({
+                  id: 1,
+                  username: "aaaa",
+                  fullName: "SametaedFurkan",
+                  avatar: "/images/avatar2.png",
+              })}
+                variant="contained"
+                color="secondary"
+              >
+                reduxa veri ekke 
+              </Button>
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">

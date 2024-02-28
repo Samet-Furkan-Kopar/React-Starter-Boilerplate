@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./navbar";
-import { useModal } from "../../store/modal/hooks";
-import Modals from "../../modals";
+// import { useModal } from "../../store/modal/hooks";
+// import Modals from "../../modals";
 import { useEffect } from "react";
 import { useAppearance } from "../../store/appearance/hooks";
 
 const Index = () => {
 
-    const modal = useModal();
+    // const modal = useModal();
     const appearance = useAppearance();
 
     useEffect(() => {
@@ -52,7 +52,7 @@ const Index = () => {
 
     return (
         <div>
-            {modal && <Modals />}
+            {/* {modal && <Modals />} */}
             <Navbar />
             <Outlet />
         </div>
