@@ -5,10 +5,8 @@ import MainLayouts from "./layouts/main";
 import Home from "./pages/home";
 import AuthLayout from "./pages/auth";
 import Login from "./pages/auth/Login";
-import { useAccount } from "./store/user/hooks";
 
 export default function App() {
-    const user = useAccount();
     return (
         <>
             <Routes>
